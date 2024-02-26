@@ -16160,7 +16160,7 @@ It is a ratio of true positives(words classified as spam, and which are actually
 <span class="c1"># TODO: Calculate accuracy, precision and recall</span>
 <span class="n">accuracy</span> <span class="o">=</span> <span class="n">TP</span> <span class="o">/</span> <span class="n">income</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 <span class="n">recall</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">precision</span> <span class="o">=</span> <span class="n">TP</span> <span class="o">/</span> <span class="n">FP</span>
+<span class="n">precision</span> <span class="o">=</span> <span class="n">TP</span> <span class="o">/</span> <span class="p">(</span><span class="n">TP</span> <span class="o">+</span> <span class="n">FP</span><span class="p">)</span>
 
 <span class="c1"># Calculate F-score using the formula above for beta = 0.5</span>
 <span class="n">beta</span> <span class="o">=</span> <span class="mf">0.5</span>
@@ -16187,7 +16187,7 @@ It is a ratio of true positives(words classified as spam, and which are actually
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Naive Predictor: [Accuracy score: 0.2478, F-score: 0.3805]
+<pre>Naive Predictor: [Accuracy score: 0.2478, F-score: 0.2917]
 </pre>
 </div>
 </div>
@@ -16841,9 +16841,9 @@ Look at the graph at the bottom left from the cell above(the visualization creat
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><strong>Answer:</strong></p>
-<p>Boosting is a powerful ensemble technique in machine learning. Unlike traditional models that learn from the data independently, boosting combines the predictions of multiple weak learners to create a single, more accurate strong learner.</p>
-<p>A weak learner is a machine learning model that is slightly better than a random guessing model. For example, let’s say we are classifying mushrooms into edible and inedible. If a random guessing model is 40% accurate, a weak learner would be just above that: 50-60%.</p>
-<p>Boosting combines dozens or hundreds of these weak learners to build a strong learner with the potential for over 95% accuracy on the same problem.</p>
+<p>Imagine we're trying to help you predict whether individuals will donate to your cause, and we've decided to use something called a Gradient Boosting Classifier to assist us. Think of this method as a smart way of making decisions based on previous experiences, but instead of relying on one big decision-making process, we use a team of smaller, simpler decision-makers. Each of these smaller decision-makers, which we can liken to individual judges, looks at the information a bit differently. They focus on correcting the mistakes of the judge before them, learning from what was missed previously.</p>
+<p>Here's how it works in simple terms: Initially, the first judge makes a broad, general guess about who might donate based on one piece of information, say, whether the person has donated to similar causes before. This guess isn't perfect, so the next judge steps in to look at where the first one went wrong, perhaps considering another piece of information like the potential donor's income level. This process repeats with each judge learning from the errors of the previous one, each time getting better at predicting who will donate.</p>
+<p>As we add more judges, each focusing on fixing past mistakes, the model becomes smarter and more refined in its predictions. It's a bit like compiling wisdom from a series of advisors, each one building on the knowledge of the last, to make a well-informed decision. By the end of this process, when we ask our team of judges to predict if someone will donate to CharityML, their combined wisdom allows us to make a very educated guess based on the patterns they've learned from the data you've provided. This is the essence of how the Gradient Boosting Classifier works to help you identify potential donors efficiently.</p>
 
 </div>
 </div>
@@ -17070,7 +17070,7 @@ Final F-score on the testing data: 0.7505
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><strong>Answer:</strong></p>
 <ul>
-<li>Optimized model Accuracy score is 0.8693, F-Score is 0.7505. These scores are a bit better than Unoptimized one (0.863, &amp; 0.7395) and way better than Naive Predictor Accuracy score: 0.2478, F-score: 0.3805.</li>
+<li>Optimized model Accuracy score is 0.8693, F-Score is 0.7505. These scores are a bit better than Unoptimized one (0.863, &amp; 0.7395) and way better than Naive Predictor Accuracy score: 0.2478, F-score: 0.2917.</li>
 </ul>
 
 </div>
